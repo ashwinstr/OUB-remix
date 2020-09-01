@@ -75,7 +75,7 @@ async def fban(event):
         status = f"Success! Fbanned in {total} feds."
 
     await event.edit(
-        f"**Fbanned ** {user_link}!\n**Reason:** {reason}\n**Status:** {status}"
+        f"**Fbanned **{user_link}!\n**Reason:** {reason}\n**Status:** {status}"
     )
 
 
