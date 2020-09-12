@@ -14,7 +14,6 @@ import shutil
 import json
 import requests
 from os import popen
-from userbot.utils import chrome, options
 import urllib.parse
 import logging
 from bs4 import BeautifulSoup
@@ -27,7 +26,6 @@ import qrcode
 import barcode
 from barcode.writer import ImageWriter
 import emoji
-from googletrans import Translator
 from time import sleep
 from html import unescape
 from re import findall
@@ -40,7 +38,6 @@ from telethon import events
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
 from urbandict import define
-from requests import get
 from requests import get, post, exceptions
 from search_engine_parser import GoogleSearch
 from googleapiclient.discovery import build
@@ -61,7 +58,7 @@ from asyncio import sleep
 from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN, bot, REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, OCR_SPACE_API_KEY, LOGS
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import progress, humanbytes, time_formatter, chrome, googleimagesdownload
+from userbot.utils import progress, humanbytes, time_formatter, chrome, options, googleimagesdownload
 import subprocess
 from datetime import datetime
 import asyncurban
@@ -403,13 +400,14 @@ async def _(event):
     try:
         translated = translator.translate(text, dest=lan)
         after_tr_text = translated.text
+        mono_tr_text = (("`{}`").format(after_tr_text))
         # TODO: emojify the :
         # either here, or before translation
         output_str = """**TRANSLATED** from {} to {}
 {}""".format(
             translated.src,
             lan,
-            after_tr_text
+            mono_tr_text
         )
         await event.edit(output_str)
     except Exception as exc:
@@ -1154,7 +1152,13 @@ async def capture(url):
     if link_match:
         link = link_match.group()
     else:
-        return await url.edit("`I need a valid link to take screenshots from.`")
+        prefix_str = 'http://'
+        complete_link = (("{}{}").format(prefix_str, input_str))
+        link_match = match(r'\bhttps?://.*\.\S+', complete_link)
+        if link_match:
+            link = link_match.group()
+        else:
+            return await url.edit("`I need a valid link to take screenshots from.`")
     driver.get(link)
     height = driver.execute_script(
         "return Math.max(document.body.scrollHeight, document.body.offsetHeight, "
@@ -1311,7 +1315,7 @@ CMD_HELP.update({
 \n\nSupported Urls: `Google Drive` - `Cloud Mail` - `Yandex.Disk` - `AFH` - `ZippyShare` - `MediaFire` - `SourceForge` - `OSDN` - `GitHub`\
 \n\n`.ss <url>`\
 \nUsage: Takes a screenshot of a website and sends the screenshot.\
-\nExample of a valid URL : `https://www.google.com`\
+\nExample of a valid URL : `google.com` or `https://www.google.com`\
 \n\n`.imdb` movie/series name\
 \nUsage:scrap movie/series information."
 })
