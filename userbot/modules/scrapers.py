@@ -400,7 +400,11 @@ async def _(event):
     try:
         translated = translator.translate(text, dest=lan)
         after_tr_text = translated.text
+<<<<<<< HEAD
         mono_tr_text = (("`{}`").format(after_tr_text)) 
+=======
+        mono_tr_text = (("`{}`").format(after_tr_text))
+>>>>>>> 18d7a9f1dac461455cccbfac754e67fabc51f0ad
         # TODO: emojify the :
         # either here, or before translation
         output_str = """**TRANSLATED** from {} to {}
