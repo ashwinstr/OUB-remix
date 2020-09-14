@@ -77,7 +77,7 @@ async def fban(event):
     await event.edit(
         f"**Fbanned **{user_link}!\n**Reason:** {reason}"
     )
-    if event.chat_id and BOTLOG:
+    if event.fban and BOTLOG:
                     await event.client.send_message(
                         BOTLOG_CHATID,
                         "#FBanned\n" + "User: " +
