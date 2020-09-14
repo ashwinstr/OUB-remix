@@ -82,8 +82,8 @@ async def fban(event):
                         BOTLOG_CHATID,
                         "#FBanned\n" + "User: " +
                         f"[{chat.first_name}](tg://user?id={chat.id})",
-
                     )
+
 
 
 @register(outgoing=True, disable_edited=True, pattern=r"^\.unfban(?: |$)(.*)")
