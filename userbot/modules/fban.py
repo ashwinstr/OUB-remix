@@ -75,8 +75,15 @@ async def fban(event):
         status = f"Success! Fbanned in {total} feds."
 
     await event.edit(
-        f"**Fbanned **{user_link}!\n**Reason:** {reason}\n**Status:** {status}"
+        f"**Fbanned **{user_link}!\n**Reason:** {reason}"
     )
+    if event.chat_id and BOTLOG:
+                    await event.client.send_message(
+                        BOTLOG_CHATID,
+                        "#FBanned\n" + "User: " +
+                        f"[{chat.first_name}](tg://user?id={chat.id})",
+                        f"**Status:** {status}"
+                    )
 
 
 @register(outgoing=True, disable_edited=True, pattern=r"^\.unfban(?: |$)(.*)")
