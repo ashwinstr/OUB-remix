@@ -82,7 +82,7 @@ async def fban(event):
                         BOTLOG_CHATID,
                         "#FBanned\n" + "User: " +
                         f"[{chat.first_name}](tg://user?id={chat.id})",
-                        f"**Status:** {status}"
+
                     )
 
 
