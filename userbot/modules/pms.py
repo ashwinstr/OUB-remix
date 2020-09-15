@@ -304,7 +304,7 @@ async def monito_p_m_s(event):
         if event.chat_id and BOTLOG:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        "#Forwarded\n" + "User: " +
+                        "#Forwarded\n" + "From " +
                         f"[{chat.first_name}](tg://user?id={chat.id})",
                     )
 
