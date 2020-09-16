@@ -404,7 +404,6 @@ async def _(event):
         mono_tr_text = (("`{}`").format(after_tr_text)) 
 
 
-
         # TODO: emojify the :
         # either here, or before translation
         output_str = """**TRANSLATED** from {} to {}
