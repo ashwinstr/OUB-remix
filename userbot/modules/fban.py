@@ -42,15 +42,7 @@ async def fban(event):
         return await event.edit(
             "**You haven't connected to any federations yet!**")
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     await event.edit(f"**Fbanning** {user_link}...")
-=======
-    await event.edit(f"**Fbanning** {user_name} {user_link}...")
->>>>>>> dd2c65cadf38787742f2e174acfa53f9a24bedf4
-=======
-    await event.edit(f"**Fbanning** {user_link}...")
->>>>>>> f198b7cff8c219b927d76c1b73991fd4c236fc07
     failed = []
     total = int(0)
 
@@ -83,15 +75,7 @@ async def fban(event):
         status = f"Success! Fbanned in {total} feds."
 
     await event.edit(
-<<<<<<< HEAD
-<<<<<<< HEAD
-        f"**Fbanned **{user_link}!\n**Reason:** {reason}\n**Status:** {status}"
-=======
-        f"**Fbanned ** {user_name} {user_link}!\n**Reason:** {reason}\n**Status:** {status}"
->>>>>>> dd2c65cadf38787742f2e174acfa53f9a24bedf4
-=======
         f"**Fbanned **{user_link}!\n**Reason:** {reason}"
->>>>>>> f198b7cff8c219b927d76c1b73991fd4c236fc07
     )
 
 
