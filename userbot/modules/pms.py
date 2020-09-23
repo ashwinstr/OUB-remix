@@ -251,7 +251,7 @@ async def blockpm(block):
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit("`You've been blocked 😡!`")
+        await block.edit("`You've been blocked! 😡`")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
@@ -301,6 +301,15 @@ async def monito_p_m_s(event):
             except Exception as e:
                 LOGS.warn(str(e))
                 
+
+        if event.chat_id and NC_LOG_P_M_S:
+                    await event.client.send_message(
+                        PM_LOGGR_BOT_API_ID,
+                        "#Forwarded\n" + "From " +
+                        f"[{chat.first_name}](tg://user?id={chat.id})",
+                    )
+
+
 
 @register(pattern="^.nolog(?: |$)(.*)")
 async def approve_p_m(event):

@@ -35,7 +35,6 @@ async def fban(event):
 
     if isinstance(fban_id, int):
         user_link = f"[{fban_id}](tg://user?id={fban_id})"
-        user_name = f"[{user.first_name}](tg://user?id={user.id})"
     else:
         user_link = fban_id
 
@@ -44,10 +43,14 @@ async def fban(event):
             "**You haven't connected to any federations yet!**")
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     await event.edit(f"**Fbanning** {user_link}...")
 =======
     await event.edit(f"**Fbanning** {user_name} {user_link}...")
 >>>>>>> dd2c65cadf38787742f2e174acfa53f9a24bedf4
+=======
+    await event.edit(f"**Fbanning** {user_link}...")
+>>>>>>> f198b7cff8c219b927d76c1b73991fd4c236fc07
     failed = []
     total = int(0)
 
@@ -81,10 +84,14 @@ async def fban(event):
 
     await event.edit(
 <<<<<<< HEAD
+<<<<<<< HEAD
         f"**Fbanned **{user_link}!\n**Reason:** {reason}\n**Status:** {status}"
 =======
         f"**Fbanned ** {user_name} {user_link}!\n**Reason:** {reason}\n**Status:** {status}"
 >>>>>>> dd2c65cadf38787742f2e174acfa53f9a24bedf4
+=======
+        f"**Fbanned **{user_link}!\n**Reason:** {reason}"
+>>>>>>> f198b7cff8c219b927d76c1b73991fd4c236fc07
     )
 
 
