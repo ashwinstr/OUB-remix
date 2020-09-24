@@ -23,6 +23,7 @@ Type 'A' when asked.
 ```bash
 & YOUR-PATH\github\updatebot\w-script.ps1
 ```
+'YOUR-PATH' is the remaining directory where the script is saved.
 
 #### 5. Choose OUB or OUB-remix whether you use either of them or not because you'll be asked which other repo you use afterwards.
 #### 6. Enter your github username.
