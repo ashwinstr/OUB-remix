@@ -18,4 +18,8 @@ Set-ExecutionPolicy RemoteSigned
 ```
 Type 'A' when asked. 
 
-#### 4. 
+#### 4. In the github directory, type
+
+```bash
+& *\updatebot\w-script.ps1
+```
