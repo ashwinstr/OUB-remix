@@ -16,6 +16,6 @@ git clone https://github.com/ashwinstr/updatebot
 ```bash
 Set-ExecutionPolicy RemoteSigned
 ```
-Type 'A' when prompted. 
+Type 'A' when asked. 
 
 #### 4. 
