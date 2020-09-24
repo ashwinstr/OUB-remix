@@ -1,7 +1,7 @@
 #update script of userbot by AshSTR
 
 #get repo
-$repo = Read-Host "OUB or OUB-remix? "
+$repo = Read-Host "OUB or OUB-remix? Select one for now. "
 
 if ($repo -eq 'OUB' -or $repo -eq 'OUB-remix' -or $repo -eq 'OUB-remix-alt') #alt repo is mine (AshSTR's)
 	{
