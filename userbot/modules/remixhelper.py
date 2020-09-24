@@ -17,7 +17,9 @@ async def usit(e):
         "\n[Kali Linux Method](https://telegra.ph/How-to-keep-OpenUserBot-repo-updated-while-keeping-your-changes-through-Termux-method-04-01)"
         "\n[Ubuntu Linux Method](https://telegra.ph/How-to-keep-OUB-repo-updated-while-keeping-your-changes-through-Ubuntu-Terminal-method-04-01-2)"
         "\n[Gdrive Tutorial](https://telegra.ph/How-To-Setup-Google-Drive-04-03)"
-        "\n[video-tutorial](https://youtu.be/us1O-AnWmHA)")
+        "\n[video-tutorial](https://youtu.be/us1O-AnWmHA)"
+        "\n\nAnd here are some **scripts** for updating"
+        "\n[Windows Script](https://github.com/ashwinstr/OUB-remix/tree/sql-extended/updatebot)")
     
 @register(outgoing=True, pattern="^.remixvar$")
 async def var(m):
