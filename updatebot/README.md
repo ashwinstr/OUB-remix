@@ -1,7 +1,5 @@
 ## Automatic Updater For oub-remix 
 
-![logo](https://telegra.ph/file/54e66c33f8c0e2f215f3a.jpg)
-
 ## STEPS
 
 #### 1. Clone the repository in github folder in local. (Ignore if exists.)
@@ -31,3 +29,5 @@ Example - c:\users\xyz\documents\github\updatebot\w-script.ps1
 #### 7. Enter 'y' for OUB/OUB-remix repo, 'n' for other repo.
 #### 8. Now the script will do its work.
 #### 9. DONE.
+
+![logo](https://telegra.ph/file/54e66c33f8c0e2f215f3a.jpg)
