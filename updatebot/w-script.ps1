@@ -1,4 +1,4 @@
-#update script of userbot by AshSTR
+#update script of userbot by **AshSTR**
 
 #get repo
 $repo = Read-Host "OUB or OUB-remix? Select one for now. "
