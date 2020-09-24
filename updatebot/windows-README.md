@@ -21,5 +21,11 @@ Type 'A' when asked.
 #### 4. In the github directory, type
 
 ```bash
-& *\updatebot\w-script.ps1
+& YOUR-PATH\github\updatebot\w-script.ps1
 ```
+
+#### 5. Choose OUB or OUB-remix whether you use either of them or not because you'll be asked which other repo you use afterwards.
+#### 6. Enter your github username.
+#### 7. Enter 'y' for OUB/OUB-remix repo, 'n' for other repo.
+#### 8. Now the script will do its work.
+#### 9. DONE.
