@@ -18,7 +18,7 @@ if ($repo -eq 'OUB' -or $repo -eq 'OUB-remix' -or $repo -eq 'OUB-remix-alt') #al
 	Write-Host " "
 
 	#check whether forked properly or not
-	$fork = Read-Host "Have you forked oub-remix from sahyam2019 or has the same repo name i.e. oub-remix? [y/n]: "
+	$fork = Read-Host "Have you forked oub-remix from mkaraniya/sahyam2019 or has the same repo name i.e. OpenUserBot or oub-remix? [y/n]: "
 	Write-Host " "
 
 	if ($fork -eq 'y')
