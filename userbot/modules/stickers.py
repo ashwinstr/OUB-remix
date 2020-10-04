@@ -356,16 +356,9 @@ async def sticker_to_png(sticker):
             await sticker.delete()
     return
 
-<<<<<<< HEAD
 CMD_HELP.update({
     "stickers":
     "`.kangme`\
-=======
-
-CMD_HELP.update(
-    {
-        "stickers": ".kang\
->>>>>>> b9819326d7c4b152df8d8d24e63eff1f9a3b4879
 \nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack.\
 \n\n`.kangme` [emoji('s)]\
 \nUsage: Works just like .kang but uses the emoji('s) you picked.\
