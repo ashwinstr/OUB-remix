@@ -31,9 +31,9 @@ KANGING_STR = [
     "`Kanging this sticker...`",
 ]
 
-@register(outgoing=True, pattern="^.kangme($| )?((?![0-9]).+?)? ?([0-9]*)?")
-async def kang(event):
-    """ Function for .kang command, create a sticker pack and add stickers. """
+@register(outgoing=True, pattern="^.kangme")
+async def kang(args):
+    """ For .kang command, kangs stickers or creates new ones. """
     user = await bot.get_me()
     if not user.username:
         user.username = user.first_name
@@ -97,7 +97,7 @@ async def kang(event):
                 emoji = splat[1]
 
         packname = f"a{user.id}_by_{user.username}_{pack}"
-        packnick = f"@{user.username}'s remix pack Vol.{pack}"
+        packnick = f"@{user.username}'s kang pack Vol.{pack}"
         cmd = "/newpack"
         file = io.BytesIO()
 
@@ -129,7 +129,7 @@ async def kang(event):
                 while "120" in x.text:
                     pack += 1
                     packname = f"a{user.id}_by_{user.username}_{pack}"
-                    packnick = f"@{user.username}'s remix pack Vol.{pack}"
+                    packnick = f"@{user.username}'s kang pack Vol.{pack}"
                     await args.edit(
                         "`Switching to Pack "
                         + str(pack)
@@ -356,9 +356,10 @@ async def sticker_to_png(sticker):
             await sticker.delete()
     return
 
-CMD_HELP.update({
-    "stickers":
-    "`.kangme`\
+
+CMD_HELP.update(
+    {
+        "stickers": ".kangme\
 \nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack.\
 \n\n`.kangme` [emoji('s)]\
 \nUsage: Works just like .kang but uses the emoji('s) you picked.\
