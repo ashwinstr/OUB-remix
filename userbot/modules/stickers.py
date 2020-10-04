@@ -31,16 +31,9 @@ KANGING_STR = [
     "`Kanging this sticker...`",
 ]
 
-<<<<<<< HEAD
 @register(outgoing=True, pattern="^.kangme($| )?((?![0-9]).+?)? ?([0-9]*)?")
 async def kang(event):
     """ Function for .kang command, create a sticker pack and add stickers. """
-    await event.edit('`Kanging...`')
-=======
-@register(outgoing=True, pattern="^.kang")
-async def kang(args):
-    """ For .kang command, kangs stickers or creates new ones. """
->>>>>>> b9819326d7c4b152df8d8d24e63eff1f9a3b4879
     user = await bot.get_me()
     if not user.username:
         user.username = user.first_name
@@ -85,76 +78,6 @@ async def kang(args):
         await args.edit("`Couldn't download sticker! Make sure you send a proper sticker/photo.`")
         return
 
-<<<<<<< HEAD
-    sticker = io.BytesIO()
-    await bot.download_media(message, sticker)
-    sticker.seek(0)
-
-    if not sticker:
-        await event.edit("`Couldn't download sticker! Make sure you send a proper sticker/photo.`")
-        return
-
-    is_anim = message.file.mime_type == "application/x-tgsticker"
-    if not is_anim:
-        img = await resize_photo(sticker)
-        sticker.name = "sticker.png"
-        sticker.seek(0)
-        img.save(sticker, "PNG")
-
-    # The user didn't specify an emoji...
-    if not emoji:
-        if message.file.emoji: # ...but the sticker has one
-            emoji = message.file.emoji
-        else: # ...and the sticker doesn't have one either
-            emoji = "🤔"
-
-    packname = f"a{user.id}_by_{pack_username}_{number}{'_anim' if is_anim else ''}"
-    packtitle = (f"@{user.username or user.first_name}'s kang pack Vol."
-                f"{number}{' animated' if is_anim else ''}")
-    response = urllib.request.urlopen(
-            urllib.request.Request(f'http://t.me/addstickers/{packname}'))
-    htmlstr = response.read().decode("utf8").split('\n')
-    new_pack = PACK_DOESNT_EXIST in htmlstr
-
-    # Mute Stickers bot to ensure user doesn't get notification spam
-    muted = await bot(UpdateNotifySettingsRequest(
-        peer='t.me/Stickers',
-        settings=InputPeerNotifySettings(mute_until=2**31-1)) # Mute forever
-    )
-    if not muted: # Tell the user just in case, this may rarely happen
-        await event.edit(
-            "`remix couldn't mute the Stickers bot, beware of notification spam.`")
-
-    if new_pack:
-        await event.edit("`This remix Sticker Pack doesn't exist! Creating a new pack...`")
-        await newpack(is_anim, sticker, emoji, packtitle, packname)
-    else:
-        async with bot.conversation('t.me/Stickers') as conv:
-            # Cancel any pending command
-            await conv.send_message('/cancel')
-            await conv.get_response()
-
-            # Send the add sticker command
-            await conv.send_message('/addsticker')
-            await conv.get_response()
-
-            # Send the pack name
-            await conv.send_message(packname)
-            x = await conv.get_response()
-
-            # Check if the selected pack is full
-            while x.text == PACK_FULL:
-                # Switch to a new pack, create one if it doesn't exist
-                number += 1
-                packname = f"a{user.id}_by_{pack_username}_{number}{'_anim' if is_anim else ''}"
-                packtitle = (f"@{user.username or user.first_name}'s kang pack Vol."
-                            f"{number}{' animated' if is_anim else ''}")
-
-                await event.edit(
-                    f"`Switching to Pack {number} due to insufficient space in Pack {number-1}.`"
-                )
-
-=======
     if photo:
         splat = args.text.split()
         if not emojibypass:
@@ -201,7 +124,6 @@ async def kang(args):
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
->>>>>>> b9819326d7c4b152df8d8d24e63eff1f9a3b4879
                 await conv.send_message(packname)
                 x = await conv.get_response()
                 while "120" in x.text:
