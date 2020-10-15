@@ -1,3 +1,9 @@
+"""Get a user-customised google search meme!"""
+
+# Plugin By - XlayerCharon[XCB]
+# TG ~>>//@CharonCB21
+# Ported for OUB by @AshSTR
+
 import asyncio
 import os 
 from PIL import Image, ImageDraw, ImageFont
