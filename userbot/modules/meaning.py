@@ -1,4 +1,5 @@
 from userbot.events import register
+from userbot import CMD_HELP
 from PyDictionary import PyDictionary
 
 @register(outgoing=True, pattern=r"^\.meaning(?: |$)(.*)")
