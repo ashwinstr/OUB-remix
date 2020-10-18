@@ -9,10 +9,15 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 from wget import download
 
+<<<<<<< HEAD
 from userbot import CMD_HELP
 from userbot.events import register
 
 
+=======
+from userbot.events import register
+
+>>>>>>> cdaec16f4ce3c4f4a687cd9a72e080829a251e2f
 @register(outgoing=True, pattern="^.fgs ((.*) ; (.*))")
 async def FakeGoogleSearch(event):
     """ Get a user-customised google search meme! """
@@ -34,7 +39,11 @@ async def FakeGoogleSearch(event):
     drawing=ImageDraw.Draw(photo)
     blue=(0,0,255)
     black=(0,0,0)
+<<<<<<< HEAD
     font1=ImageFont.truetype("userbot/utils/styles/ProductSans-BoldItalic.ttf",25)
+=======
+    font1=ImageFont.truetype("userbot/utils/styles/ProductSans-BoldItalic.ttf",20)
+>>>>>>> cdaec16f4ce3c4f4a687cd9a72e080829a251e2f
     font2=ImageFont.truetype("userbot/utils/styles/ProductSans-Light.ttf",23)
     drawing.text((450, 258), result, fill=blue, font=font1)
     drawing.text((270, 37), search, fill=black, font=font2)
@@ -48,6 +57,7 @@ async def FakeGoogleSearch(event):
         reply_to_message_id=reply_id)
     os.remove('downloads/test.jpg')
 
+<<<<<<< HEAD
     CMD_HELP.update(
     {
         "fake_google_search": "`.fgs`\n"
@@ -55,3 +65,5 @@ async def FakeGoogleSearch(event):
         "`.fgs [UpperText] ; [LowerText]`\n"
     }
 )
+=======
+>>>>>>> cdaec16f4ce3c4f4a687cd9a72e080829a251e2f
