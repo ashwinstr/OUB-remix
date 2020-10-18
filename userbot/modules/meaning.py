@@ -1,11 +1,11 @@
 from userbot.events import register
 from userbot import CMD_HELP
-from PyDictionary import PyDictionary
+import asyncurban
 
 @register(outgoing=True, pattern=r"^\.meaning(?: |$)(.*)")
 async def _(event):
     word = event.pattern_match.group(1)
-    dictionary = PyDictionary()
+    dictionary = asyncurban()
     words = dictionary.meaning(word)
     output = f"**Word :** __{word}__\n\n"
     try:
