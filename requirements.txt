@@ -90,3 +90,5 @@ lottie
 wand
 colour
 PyDictionary
+wordcloud
+scipy
