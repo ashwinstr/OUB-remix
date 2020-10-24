@@ -21,8 +21,6 @@ async def _(event):
 CMD_HELP.update(
     {
         "dictionary": "**Plugin :** `dictionary`\
-    \n\n**Syntax :** `.ud query`\
-    \n**Usage : **fetches meaning from Urban dictionary\
     \n\n**Syntax : **`.meaning query`\
     \n**Usage : **Fetches meaning of the given word\
     "
