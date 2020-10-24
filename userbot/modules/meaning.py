@@ -12,7 +12,7 @@ async def _(event):
         for a, b in words.items():
             output += f"**{a}**\n"
             for i in b:
-                output += f"⚫__{i}__\n"
+                output += f"◾ __{i}__\n"
         await event.edit(output)
     except Exception:
         await event.edit(f"Couldn't fetch meaning of {word}")
