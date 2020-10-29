@@ -99,6 +99,20 @@ async def log(log_text):
         await log_text.edit("`This feature requires Logging to be enabled!`")
     await sleep(2)
     await log_text.delete()
+    
+    
+@register(outgoing=True, pattern=r"^.logit1(?: |$)([\s\S]*)")
+async def log(log_text):
+    """ For .log command, forwards a message or the command argument to the GPC_highlights channel """
+    if BOTLOG:
+        if log_text.reply_to_msg_id:
+            reply_msg = await log_text.get_reply_message()
+            await reply_msg.forward_to(-1001493108444)
+        await log_text.edit("`Logged Successfully`")
+    else:
+        await log_text.edit("`This feature requires Logging to be enabled!`")
+    await sleep(2)
+    await log_text.delete()
 
 
 @register(outgoing=True, pattern="^.kickme$")
@@ -402,6 +416,8 @@ CMD_HELP.update({
 \nUsage: Get the Bots in any chat.\
 \n\n`.logit`\
 \nUsage: Forwards the message you've replied to in your bot logs group.\
+\n\n`.logit1`\
+\nUsage: Forwards the message you've replied to the GPC_highlights channel.\
 \n\n`.kickme`\
 \nUsage: Leave from a targeted group.\
 \n\n`.unmutechat`\
