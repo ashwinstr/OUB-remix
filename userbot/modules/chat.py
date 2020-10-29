@@ -108,7 +108,10 @@ async def log(log_text):
         if log_text.reply_to_msg_id:
             reply_msg = await log_text.get_reply_message()
             await reply_msg.forward_to(-1001493108444)
-        await log_text.edit("`Logged Successfully`")
+        await log_text.edit(
+            f"`Logged Successfully to the channel:`\n"
+            f"[GPC_highlights](https://t.me/GPC_highlights)"
+        )
     else:
         await log_text.edit("`This feature requires Logging to be enabled!`")
 
