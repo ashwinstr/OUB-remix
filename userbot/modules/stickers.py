@@ -25,6 +25,8 @@ from telethon.tl.types import (
 from userbot import CMD_HELP, bot
 from userbot.events import register
 
+combot_stickers_url = "https://combot.org/telegram/stickers?q="
+
 KANGING_STR = [
     "Stealing this sticker...",
     "Plagiarising hehe...",
