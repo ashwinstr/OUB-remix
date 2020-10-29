@@ -12,6 +12,7 @@ import random
 import urllib.request
 from os import remove
 
+import requests 
 from PIL import Image
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.types import (
