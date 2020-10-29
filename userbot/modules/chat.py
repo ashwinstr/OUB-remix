@@ -111,8 +111,6 @@ async def log(log_text):
         await log_text.edit("`Logged Successfully`")
     else:
         await log_text.edit("`This feature requires Logging to be enabled!`")
-    await sleep(2)
-    await log_text.delete()
 
 
 @register(outgoing=True, pattern="^.kickme$")
